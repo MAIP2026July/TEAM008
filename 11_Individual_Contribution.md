@@ -103,7 +103,7 @@ Alamelu also supported ongoing discussion and review as the concept evolved into
 
 ---
 
-## 7. Abdurrahman Lalsudhesh - 2025MB26034
+## 7. Abdurrahman Lalsudhesh H - 2025MB26034
 
 ### Primary Contribution Area
 
