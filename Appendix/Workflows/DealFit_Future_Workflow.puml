@@ -1,0 +1,92 @@
+@startuml
+
+title DealFit - Future-State Sponsorship Screening Workflow
+
+skinparam backgroundColor white
+skinparam activity {
+  BackgroundColor #F7F9FC
+  BorderColor #4A5568
+  FontColor #1A202C
+  DiamondBackgroundColor #FFF4CC
+  DiamondBorderColor #B7791F
+}
+skinparam ArrowColor #4A5568
+
+|Brand / Platform|
+start
+:Send sponsorship pitch through\nEmail / DM / Creator Marketplace;
+
+|Creator|
+:Open DealFit;
+:Select or update persistent\ncreator profile;
+:Paste pitch and enter known\ndeal terms;
+
+|DealFit Application|
+:Structure pitch into\nstandard screening fields;
+:Check mandatory information;
+
+if (Critical information missing?) then (Yes)
+  :Flag missing information;
+  :Set confidence to Low;
+  :Recommend Need More Information\n/ Manual Review;
+  |Creator|
+  :Review missing items;
+  :Request clarification from brand\nor continue manual review;
+  |Brand / Platform|
+  :Provide additional information;
+  |Creator|
+  :Update pitch details in DealFit;
+  |DealFit Application|
+else (No)
+endif
+
+|Deterministic Rules|
+:Check creator exclusions,\nminimum requirements, usage-rights\nand exclusivity rules;
+
+if (Hard creator conflict?) then (Yes)
+  :Create hard-conflict flag;
+  |DealFit Application|
+  :Recommend Decline or\nManual Review;
+else (No)
+  |AI Assessment|
+  :Assess niche alignment, audience fit,\nbrief clarity and values alignment;
+  :Identify softer concerns,\ntrade-offs and negotiation signals;
+  :Separate provided facts,\nAI inferences and items requiring verification;
+
+  |DealFit Application|
+  :Combine rule results and AI assessment;
+  :Calculate DealFit score and\nconfidence state;
+  :Generate recommendation, reasons,\nrisk flags and next action;
+
+  if (Low confidence or elevated risk?) then (Yes)
+    :Recommend Manual Review /\nNeed More Information;
+  else (No)
+    if (Strong fit and acceptable terms?) then (Yes)
+      :Recommend Accept;
+    elseif (Good potential but terms need change?) then (Negotiate)
+      :Recommend Negotiate;
+    else (Weak fit)
+      :Recommend Decline;
+    endif
+  endif
+endif
+
+|Creator|
+:Review score, recommendation, confidence,\nreasons, risk flags and missing information;
+
+if (Creator agrees with recommendation?) then (Yes)
+  :Record final creator decision;
+else (No)
+  :Override recommendation;
+  :Optionally record override reason;
+endif
+
+|DealFit Application|
+:Store recommendation, final decision\nand override feedback for evaluation;
+:No external action is executed automatically;
+
+|Creator|
+:Take final human-approved action:\nAccept / Negotiate / Decline /\nRequest Information / Manual Review;
+stop
+
+@enduml
