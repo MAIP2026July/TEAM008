@@ -90,7 +90,7 @@ Demonstrate the complete DealFit workflow and identify product-logic weaknesses 
 - Manual pitch entry
 - Deterministic rules
 - Local AI-style assessment logic
-- Four-way product recommendation
+- Four recommendation states: Accept, Negotiate, Decline, or Manual Review / Need More Information
 - Five human decision actions
 - Human override
 - Synthetic scenarios
