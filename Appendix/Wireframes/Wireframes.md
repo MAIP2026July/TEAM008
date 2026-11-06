@@ -351,7 +351,7 @@ Show that creator-defined exclusions override positive AI reasoning.
 +--------------------------------------------------------------------------------+
 | DealFit                                                  HARD CONFLICT          |
 +--------------------------------------------------------------------------------+
-| Recommendation: DECLINE / MANUAL REVIEW                                      |
+| Recommendation: DECLINE / MANUAL REVIEW                                        |
 | Confidence: HIGH for rule detection                                             |
 +--------------------------------------------------------------------------------+
 | RULE TRIGGER                                                                   |
