@@ -21,8 +21,6 @@
 | Abdurrahman Lalsudhesh H | 2025MB26034 |
 | Poojagiri V | 2025MB26084 |
 
-GitHub IDs can be added beside the corresponding team members once confirmed.
-
 ---
 
 ## Product Overview
@@ -322,6 +320,8 @@ The next investment should prioritize:
 | `Appendix/Workflows/Current_State_Workflow.puml` | Before-DealFit workflow |
 | `Appendix/Workflows/DealFit_Future_Workflow.puml` | Future-state DealFit workflow |
 | `Appendix/Wireframes/Wireframes.md` | Low-fidelity screen specifications |
+| `Appendix/Data_Model/Data_Model_and_Output_Schema.md` | Logical data model and structured DealFit output schema |
+| `Appendix/Topic_Approval/Approved_Topic_Proposal.md` | Original approved DealFit topic proposal |
 | `Appendix/Metrics/Metrics_and_Launch_Gates.md` | Prototype evidence and go/no-go gates |
 | `Appendix/AI_Self_Evaluation/AI_Product_Self_Evaluation.md` | AI-generated product self-evaluation |
 | `Appendix/Roadmap/Roadmap.md` | MVP-to-first-revenue roadmap |
