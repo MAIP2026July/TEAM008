@@ -103,6 +103,7 @@ The MVP will not:
 - replace an agent, manager, or legal reviewer;
 - train a proprietary foundation model;
 - guarantee commercial, audience, or reputational outcomes.
+- make irreversible creator or partnership decisions.
 
 ---
 
@@ -327,7 +328,7 @@ The product shall visibly flag relevant risks, including:
 - broad or unclear usage rights;
 - exclusivity;
 - missing payment terms;
-- suspiciously attractive or incomplete offer;
+- unusually attractive or materially incomplete offer;
 - unverified brand information;
 - possible conflict with existing partnerships.
 
