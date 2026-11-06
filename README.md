@@ -103,7 +103,7 @@ Flexible reasoning is used for softer/contextual signals such as:
 
 The creator or manager retains responsibility for:
 
-- final Accept / Negotiate / Decline decision;
+- final Accept / Negotiate / Decline / Need More Information / Manual Review decision;
 - relationship context unavailable to DealFit;
 - legal/professional review;
 - external reputation verification;
