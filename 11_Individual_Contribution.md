@@ -111,7 +111,7 @@ Alamelu also supported ongoing discussion and review as the concept evolved into
 
 ### Contribution Summary
 
-Abdurrahman Lalsudhesh participated in the team idea-selection discussions and then took a leading execution role in translating the agreed DealFit concept into the integrated PM submission and working prototype. The contribution centered on connecting the individual product artifacts into one consistent product narrative and maintaining continuity from strategy through requirements, prototype behavior, testing, revision and final evidence.
+Abdurrahman Lalsudhesh H participated in the team idea-selection discussions and then took a leading execution role in translating the agreed DealFit concept into the integrated PM submission and working prototype. The contribution centered on connecting the individual product artifacts into one consistent product narrative and maintaining continuity from strategy through requirements, prototype behavior, testing, revision and final evidence.
 
 ### Contribution Themes
 
@@ -166,7 +166,7 @@ Team members continued to provide discussion, review and coordination support as
 
 ### Detailed Product Execution
 
-The more execution-intensive work of integrating the PM artifacts, coordinating the prototype, running the structured scenario tests, documenting failures, driving the Version 2 correction cycle and consolidating the final repository was led by Abdurrahman Lalsudhesh.
+The more execution-intensive work of integrating the PM artifacts, coordinating the prototype, running the structured scenario tests, documenting failures, driving the Version 2 correction cycle and consolidating the final repository was led by Abdurrahman Lalsudhesh H.
 
 This structure reflects both the collaborative origin of DealFit and the different levels and types of contribution required as the project progressed.
 
