@@ -13,7 +13,7 @@ This statement summarizes how the DealFit team contributed across idea selection
 | Arunachala Gnana Ramanan | 2025MB26107 | Idea exploration, problem framing, product-scope discussion and ongoing team review |
 | Boggavarapu Jagannath | 2025MB26076 | Idea exploration, alternative-concept evaluation, creator-use-case refinement and ongoing coordination |
 | Alamelu G | 2025MB26016 | Target-user framing, problem-definition discussion, product review and team coordination |
-| Abdurrahman Lalsudhesh | 2025MB26034 | Product-management artifact integration, prototype/evaluation execution, iteration and final repository consolidation |
+| Abdurrahman Lalsudhesh H | 2025MB26034 | Product-management artifact integration, prototype/evaluation execution, iteration and final repository consolidation |
 | Poojagiri V | 2025MB26084 | Product ideation, scope refinement, usability perspective, review support and team coordination |
 
 GitHub IDs should be added to the root `README.md` once confirmed.
