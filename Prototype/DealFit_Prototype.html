@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DealFit MVP v2</title>
+<style>
+:root{--navy:#13233f;--blue:#315efb;--blue2:#eaf0ff;--bg:#f5f7fb;--card:#fff;--text:#172033;--muted:#667085;--border:#d8deea;--green:#147d64;--greenbg:#e8f7f1;--amber:#a15c00;--amberbg:#fff4dd;--red:#b42318;--redbg:#ffebe9;--purple:#6941c6;--purplebg:#f2edff;--shadow:0 10px 28px rgba(20,35,65,.08)}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif} button,input,select,textarea{font:inherit} button{cursor:pointer}.top{background:linear-gradient(120deg,var(--navy),#243d6b);color:white;padding:18px 5vw;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:8}.brand{font-size:1.35rem;font-weight:800}.tag{opacity:.85;font-size:.9rem}.shell{max-width:1180px;margin:auto;padding:24px}.stepper{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:22px}.step{background:#e9edf5;color:#667085;padding:10px;text-align:center;border-radius:10px;font-weight:700;font-size:.9rem}.step.active{background:var(--blue);color:#fff}.step.done{background:#dfe8ff;color:#2143b8}.panel{display:none}.panel.active{display:block}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow);margin-bottom:18px}.card h1,.card h2,.card h3{margin-top:0}.intro{color:var(--muted);margin-top:-5px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:7px}.full{grid-column:1/-1}label{font-weight:700;font-size:.91rem}.help{font-size:.79rem;color:var(--muted)}input,select,textarea{width:100%;border:1px solid var(--border);border-radius:9px;padding:11px 12px;background:white;color:var(--text)}textarea{min-height:95px;resize:vertical}input:focus,select:focus,textarea:focus{outline:3px solid #dce5ff;border-color:var(--blue)}.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;flex-wrap:wrap}.btn{border:0;border-radius:9px;padding:11px 16px;font-weight:750}.primary{background:var(--blue);color:white}.secondary{background:#edf1f7;color:#27344d}.danger{background:var(--redbg);color:var(--red)}.success{background:var(--greenbg);color:var(--green)}.notice{border-left:4px solid var(--blue);background:var(--blue2);padding:12px 14px;border-radius:8px;color:#294070}.sensitive{font-size:.83rem;color:var(--amber);background:var(--amberbg);padding:8px 10px;border-radius:8px}.scenario-bar{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.scenario-bar .field{flex:1;min-width:260px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.metric{border:1px solid var(--border);border-radius:14px;padding:17px;background:#fbfcff}.metric .label{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:800}.metric .value{font-size:1.8rem;font-weight:850;margin-top:6px}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:7px 11px;font-weight:800;font-size:.86rem}.accept{background:var(--greenbg);color:var(--green)}.negotiate{background:var(--amberbg);color:var(--amber)}.decline{background:var(--redbg);color:var(--red)}.review{background:var(--purplebg);color:var(--purple)}.evidence{display:grid;grid-template-columns:1fr 1fr;gap:14px}.box{border:1px solid var(--border);border-radius:12px;padding:16px}.box h3{font-size:1rem;margin:0 0 10px}.box ul{margin:0;padding-left:19px}.box li{margin:6px 0}.risk{border-left:4px solid var(--amber)}.missing{border-left:4px solid var(--purple)}.hard{border-left:5px solid var(--red);background:#fffafa}.risk-row{display:flex;gap:10px;margin:8px 0;align-items:flex-start}.sev{min-width:65px;text-align:center;border-radius:999px;padding:4px 8px;font-size:.73rem;font-weight:850}.high{background:var(--redbg);color:var(--red)}.medium{background:var(--amberbg);color:var(--amber)}.low{background:#eef2f6;color:#475467}.bars{display:grid;gap:10px}.bar-row{display:grid;grid-template-columns:190px 1fr 45px;align-items:center;gap:10px}.bar{height:10px;border-radius:999px;background:#e7ecf4;overflow:hidden}.fill{height:100%;background:var(--blue)}.disclaimer{font-size:.81rem;color:var(--muted);border-top:1px solid var(--border);margin-top:15px;padding-top:12px}.decision-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.decision{border:1px solid var(--border);background:#fff;padding:12px 8px;border-radius:9px;font-weight:750}.decision.selected{border:2px solid var(--blue);background:var(--blue2);color:#183fc2}.hidden{display:none!important}.confirm{background:var(--greenbg);color:#075e4b;padding:15px;border-radius:10px;margin-top:15px}.history{width:100%;border-collapse:collapse;font-size:.88rem}.history th,.history td{border-bottom:1px solid var(--border);padding:10px;text-align:left}.history th{color:var(--muted)}.error{color:var(--red);font-size:.82rem;font-weight:700}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:22px}.fact-label{font-size:.72rem;text-transform:uppercase;color:var(--muted);font-weight:850;letter-spacing:.05em}.top-actions{display:flex;gap:8px}.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#7ed6b3;margin-right:6px}.small{font-size:.82rem;color:var(--muted)}
+@media(max-width:760px){.grid,.evidence,.summary{grid-template-columns:1fr}.stepper{grid-template-columns:1fr 1fr}.decision-grid{grid-template-columns:1fr 1fr}.bar-row{grid-template-columns:135px 1fr 38px}.shell{padding:14px}.top{padding:14px}.tag{display:none}.history{font-size:.75rem}.card{padding:16px}}
+</style>
+</head>
+<body>
+<header class="top"><div><div class="brand">DealFit</div><div class="tag">AI-assisted brand partnership screening</div></div><div class="small" style="color:white"><span class="status-dot"></span>Local prototype</div></header>
+<main class="shell">
+<div class="stepper"><div class="step active" id="st1">1. Creator Profile</div><div class="step" id="st2">2. New Deal</div><div class="step" id="st3">3. Analysis</div><div class="step" id="st4">4. Decision</div></div>
+
+<section class="panel active" id="profilePanel">
+<div class="card"><h1>Creator Profile</h1><p class="intro">Tell DealFit how partnership opportunities should be screened.</p><div class="sensitive">Commercial preferences and partnership notes may be sensitive. This prototype stores data only within the current browser session.</div>
+<div class="grid" style="margin-top:18px">
+<div class="field"><label for="profileName">Profile name *</label><input id="profileName" value="Maya - Lifestyle Creator"><span class="error" id="profileErr"></span></div>
+<div class="field"><label for="followers">Follower range</label><select id="followers"><option>10K-50K</option><option selected>50K-100K</option><option>100K-200K</option></select></div>
+<div class="field"><label for="niche">Primary niche *</label><input id="niche" value="Lifestyle & Wellness"></div>
+<div class="field"><label for="formats">Typical content formats</label><input id="formats" value="Short video, Stories"></div>
+<div class="field"><label for="themes">Content themes</label><input id="themes" value="Wellness, routines, travel"></div>
+<div class="field"><label for="audience">Audience characteristics</label><input id="audience" value="Urban, 18-34, wellness interested"></div>
+<div class="field"><label for="preferred">Preferred categories</label><input id="preferred" value="Wellness, travel, beauty"></div>
+<div class="field"><label for="excluded">Excluded categories</label><input id="excluded" value="Gambling, tobacco, payday loans"></div>
+<div class="field"><label for="values">Creator values / boundaries</label><textarea id="values">No misleading health claims. No unrealistic body claims.</textarea></div>
+<div class="field"><label for="minimum">Minimum compensation (INR, optional)</label><input id="minimum" type="number" min="0" value="25000"><span class="help">Creator-controlled preference, not a market benchmark.</span></div>
+<div class="field full"><label for="partnerships">Previous partnership notes (optional)</label><textarea id="partnerships">Existing 3-month exclusivity with a skincare brand.</textarea></div>
+</div><div class="actions"><button class="btn secondary" id="resetProfile">Reset to Demo Persona</button><button class="btn primary" id="saveProfile">Save Creator Profile</button></div></div>
+</section>
+
+<section class="panel" id="dealPanel">
+<div class="card"><h1>New Partnership</h1><p class="intro">Paste the original pitch and confirm any known terms. Use “Not Provided” instead of guessing.</p>
+<div class="scenario-bar"><div class="field"><label for="scenario">Synthetic demo scenario</label><select id="scenario"></select></div><button class="btn secondary" id="loadScenario">Load Scenario</button></div>
+<div class="notice" style="margin:16px 0">All built-in scenarios use fictional brands and synthetic deal information.</div>
+<div class="grid">
+<div class="field"><label for="brand">Brand name *</label><input id="brand"><span class="error" id="brandErr"></span></div>
+<div class="field"><label for="category">Brand category</label><input id="category"></div>
+<div class="field"><label for="compensation">Proposed compensation (INR)</label><input id="compensation" type="number" min="0"></div>
+<div class="field"><label for="timeline">Campaign timeline</label><input id="timeline"></div>
+<div class="field full"><label for="deliverables">Deliverables</label><input id="deliverables"></div>
+<div class="field"><label for="usage">Usage rights</label><input id="usage"></div>
+<div class="field"><label for="exclusivity">Exclusivity terms</label><input id="exclusivity"></div>
+<div class="field"><label for="targetAudience">Target audience</label><input id="targetAudience"></div>
+<div class="field"><label for="payment">Payment terms</label><input id="payment"></div>
+<div class="field full"><label for="pitch">Original pitch / campaign brief *</label><textarea id="pitch"></textarea><span class="error" id="pitchErr"></span></div>
+<div class="field full"><label for="notes">Additional creator notes</label><textarea id="notes"></textarea></div>
+</div><div class="actions"><button class="btn secondary" id="clearPitch">Clear Pitch</button><button class="btn primary" id="analyze">Analyze with DealFit</button></div></div>
+</section>
+
+<section class="panel" id="analysisPanel">
+<div id="analysisContent"></div>
+<div class="actions"><button class="btn secondary" id="editDeal">Edit Facts and Rerun</button><button class="btn primary" id="continueDecision">Continue to Creator Decision</button></div>
+</section>
+
+<section class="panel" id="decisionPanel">
+<div class="card"><h1>Creator Decision</h1><div id="decisionSummary" class="notice"></div><p><strong>What is the creator's final decision?</strong></p>
+<div class="decision-grid" id="decisionGrid"><button class="decision">Accept</button><button class="decision">Negotiate</button><button class="decision">Decline</button><button class="decision">Need More Information</button><button class="decision">Manual Review</button></div>
+<div id="overrideArea" class="hidden" style="margin-top:18px"><div class="notice" style="border-left-color:var(--amber);background:var(--amberbg)"><strong>You are overriding the DealFit recommendation.</strong></div><div class="grid" style="margin-top:14px"><div class="field"><label for="overrideReason">Override reason (optional)</label><select id="overrideReason"><option value="">Select...</option><option>Personal relationship or context</option><option>Existing partnership conflict</option><option>Commercial context unavailable to DealFit</option><option>Audience context unavailable to DealFit</option><option>Contract concern</option><option>Known brand information</option><option>Recommendation reasoning was not persuasive</option><option>Other</option></select></div><div class="field"><label for="overrideNotes">Additional notes</label><textarea id="overrideNotes"></textarea></div></div></div>
+<div class="disclaimer">No message, contract action, acceptance, rejection, or payment will be executed automatically.</div><div class="actions"><button class="btn secondary" id="backAnalysis">Back to Analysis</button><button class="btn primary" id="recordDecision">Record Final Decision</button></div><div id="confirmation" class="confirm hidden"></div></div>
+<div class="card"><h2>Decision History</h2><div style="overflow:auto"><table class="history"><thead><tr><th>Brand</th><th>DealFit</th><th>Confidence</th><th>Creator Decision</th><th>Override</th></tr></thead><tbody id="historyBody"><tr><td colspan="5" class="small">No decisions recorded in this session.</td></tr></tbody></table></div></div>
+</section>
+<div class="footer">DealFit MVP v2 | Synthetic evaluation prototype | AI-assisted screening only</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let profile={}, currentResult=null, finalChoice='', history=[];
+const scenarios=[
+{id:'S01',name:'Strong fit, complete terms',brand:'TrailGo',category:'Travel',compensation:42000,timeline:'4 weeks',deliverables:'1 short video + 3 stories',usage:'Organic social, 3 months',exclusivity:'None',audience:'Urban young travelers',payment:'50% upfront, 50% in 30 days',pitch:'TrailGo invites Maya to create practical wellness-focused travel content for young urban travelers. All deliverables and terms are specified.',notes:'',expected:'Accept'},
+{id:'S02',name:'Strong fit, low compensation',brand:'BloomWell',category:'Wellness',compensation:12000,timeline:'3 weeks',deliverables:'2 short videos + 4 stories',usage:'Organic social, 3 months',exclusivity:'None',audience:'Wellness enthusiasts aged 18-34',payment:'30 days after publishing',pitch:'BloomWell proposes a wellness campaign aligned to Maya’s routine content. Compensation is below the creator preference for the requested workload.',notes:'',expected:'Negotiate'},
+{id:'S03',name:'Excluded category',brand:'BetQuick',category:'Gambling',compensation:90000,timeline:'2 weeks',deliverables:'1 short video',usage:'Organic social',exclusivity:'None',audience:'Adults 21+',payment:'50% upfront',pitch:'BetQuick offers a high-paying gambling promotion.',notes:'',expected:'Decline'},
+{id:'S04',name:'Compensation missing',brand:'PureSip',category:'Wellness',compensation:'',timeline:'3 weeks',deliverables:'1 video + 2 stories',usage:'Organic social',exclusivity:'None',audience:'Health-conscious adults',payment:'Not Provided',pitch:'PureSip requests wellness content but does not state compensation or payment timing.',notes:'',expected:'Manual Review / Need More Information'},
+{id:'S05',name:'Broad paid-media rights',brand:'WellSpring Nutrition',category:'Wellness',compensation:35000,timeline:'3 weeks',deliverables:'2 short videos + 3 stories',usage:'Perpetual worldwide paid media and brand channels',exclusivity:'None',audience:'Urban wellness audience',payment:'45 days',pitch:'WellSpring proposes a relevant wellness campaign but requests perpetual worldwide paid-media rights.',notes:'',expected:'Negotiate'},
+{id:'S06',name:'Unclear exclusivity',brand:'GlowPath',category:'Beauty',compensation:40000,timeline:'4 weeks',deliverables:'1 video + 3 stories',usage:'Organic social, 6 months',exclusivity:'Category exclusivity required; duration not stated',audience:'Beauty and wellness audience',payment:'30 days',pitch:'GlowPath offers a beauty campaign with an undefined exclusivity duration.',notes:'',expected:'Manual Review / Need More Information'},
+{id:'S07',name:'Weak niche and audience fit',brand:'CodeForge Enterprise',category:'Enterprise software',compensation:50000,timeline:'2 weeks',deliverables:'2 technical product videos',usage:'Organic brand channels',exclusivity:'None',audience:'Enterprise IT buyers',payment:'30 days',pitch:'CodeForge asks a lifestyle creator to produce technical enterprise software content for IT procurement leaders.',notes:'',expected:'Decline'},
+{id:'S08',name:'Attractive but incomplete offer',brand:'NovaRush',category:'Wellness',compensation:150000,timeline:'Not Provided',deliverables:'Not Provided',usage:'Not Provided',exclusivity:'Not Provided',audience:'Not Provided',payment:'Not Provided',pitch:'NovaRush offers unusually high compensation but provides almost no campaign or contract detail.',notes:'',expected:'Manual Review / Need More Information'},
+{id:'S09',name:'Existing partnership conflict',brand:'LumiCare',category:'Beauty',compensation:48000,timeline:'3 weeks',deliverables:'1 video + 2 stories',usage:'Organic social, 3 months',exclusivity:'None',audience:'Beauty audience',payment:'30 days',pitch:'LumiCare proposes a skincare partnership.',notes:'Existing skincare exclusivity may conflict with this offer.',expected:'Decline'},
+{id:'S10',name:'Mixed fit requiring creator override',brand:'EcoMove',category:'Travel',compensation:38000,timeline:'4 weeks',deliverables:'1 video + 2 stories',usage:'Organic social',exclusivity:'None',audience:'Sustainable travel audience',payment:'30 days',pitch:'EcoMove offers a generally aligned sustainable travel campaign.',notes:'Creator knows the brand contact and has context unavailable to DealFit.',expected:'Negotiate'},
+{id:'S11',name:'Ambiguous values fit',brand:'VitaShape',category:'Wellness',compensation:45000,timeline:'3 weeks',deliverables:'1 video + 3 stories',usage:'Organic social',exclusivity:'None',audience:'Wellness audience',payment:'30 days',pitch:'VitaShape asks for transformation-focused wellness messaging. Claim requirements are ambiguous.',notes:'',expected:'Manual Review / Need More Information'},
+{id:'S12',name:'Contradictory terms',brand:'RoamBright',category:'Travel',compensation:30000,timeline:'3 weeks',deliverables:'Pitch says 1 video; attachment summary says 4 videos',usage:'Organic social',exclusivity:'None',audience:'Young travelers',payment:'30 days',pitch:'RoamBright pitch contains conflicting deliverable counts and compensation references.',notes:'Contradictory deliverable information.',expected:'Manual Review / Need More Information'}
+];
+function setStep(n){for(let i=1;i<=4;i++){const e=$('st'+i);e.className='step '+(i<n?'done':i===n?'active':'')}}
+function show(panel,n){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));$(panel).classList.add('active');setStep(n);scrollTo({top:0,behavior:'smooth'})}
+function csv(s){return (s||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean)}
+function resetProfile(){ $('profileName').value='Maya - Lifestyle Creator';$('followers').value='50K-100K';$('niche').value='Lifestyle & Wellness';$('formats').value='Short video, Stories';$('themes').value='Wellness, routines, travel';$('audience').value='Urban, 18-34, wellness interested';$('preferred').value='Wellness, travel, beauty';$('excluded').value='Gambling, tobacco, payday loans';$('values').value='No misleading health claims. No unrealistic body claims.';$('minimum').value=25000;$('partnerships').value='Existing 3-month exclusivity with a skincare brand.'}
+function saveProfile(){if(!$('profileName').value.trim()||!$('niche').value.trim()){ $('profileErr').textContent='Profile name and niche are required.';return }if(Number($('minimum').value)<0){$('profileErr').textContent='Minimum compensation cannot be negative.';return}const overlap=csv($('preferred').value).filter(x=>csv($('excluded').value).includes(x));if(overlap.length){$('profileErr').textContent='A category cannot be both preferred and excluded: '+overlap.join(', ');return}$('profileErr').textContent='';profile={name:$('profileName').value.trim(),followers:$('followers').value,niche:$('niche').value.trim(),formats:$('formats').value,themes:$('themes').value,audience:$('audience').value,preferred:csv($('preferred').value),excluded:csv($('excluded').value),values:$('values').value,minimum:Number($('minimum').value)||0,partnerships:$('partnerships').value};show('dealPanel',2)}
+function loadScenario(){const s=scenarios.find(x=>x.id===$('scenario').value)||scenarios[0];['brand','category','compensation','timeline','deliverables','usage','exclusivity','targetAudience','payment','pitch','notes'].forEach(k=>$(k).value=s[k]??'');}
+function clearPitch(){['brand','category','compensation','timeline','deliverables','usage','exclusivity','targetAudience','payment','pitch','notes'].forEach(k=>$(k).value='')}
+function missing(v){return !v||String(v).trim()===''||String(v).toLowerCase()==='not provided'}
+function terms(text,arr){text=(text||'').toLowerCase();return arr.some(x=>text.includes(x))}
+function analyze(){
+const brand=$('brand').value.trim(),pitch=$('pitch').value.trim();
+$('brandErr').textContent=brand?'':'Brand name is required.';
+$('pitchErr').textContent=pitch?'':'Pitch text is required.';
+if(!brand||!pitch)return;
+const d={brand,category:$('category').value.trim(),compensation:Number($('compensation').value)||0,timeline:$('timeline').value.trim(),deliverables:$('deliverables').value.trim(),usage:$('usage').value.trim(),exclusivity:$('exclusivity').value.trim(),audience:$('targetAudience').value.trim(),payment:$('payment').value.trim(),pitch,notes:$('notes').value.trim()};
+
+const miss=[];
+if(!d.compensation)miss.push('Proposed compensation');
+if(missing(d.deliverables))miss.push('Deliverables');
+if(missing(d.usage))miss.push('Usage rights');
+if(missing(d.exclusivity))miss.push('Exclusivity terms');
+if(missing(d.payment))miss.push('Payment terms');
+if(missing(d.timeline))miss.push('Campaign timeline');
+const criticalMissing=!d.compensation||missing(d.deliverables)||missing(d.usage);
+const contradiction=terms(d.notes+' '+d.pitch,['contradict','conflicting']);
+
+const category=d.category.toLowerCase();
+const excluded=profile.excluded.some(x=>category===x||category.includes(x)||x.includes(category));
+const preferred=profile.preferred.some(x=>category===x||category.includes(x)||x.includes(category));
+const explicitConflict=terms(d.notes,['existing','conflict','exclusiv'])&&terms(d.notes,['may conflict','conflict with this offer','existing exclusivity']);
+const unclearExclusivity=missing(d.exclusivity)||terms(d.exclusivity,['unclear','duration not','not stated']);
+
+// V2 semantic category mapping: compare campaign category and target audience with creator context,
+// rather than using incidental words from the full pitch.
+const creatorContext=(profile.niche+' '+profile.themes+' '+profile.preferred.join(' ')+' '+profile.audience).toLowerCase();
+const campaignContext=(d.category+' '+d.audience).toLowerCase();
+const domainGroups={
+  wellness:['wellness','health','nutrition','fitness','lifestyle'],
+  travel:['travel','tourism','trip','traveler','traveller','sustainable travel'],
+  beauty:['beauty','skincare','cosmetic','makeup'],
+  technology:['enterprise software','software','technology','it buyers','enterprise it','developer'],
+  gambling:['gambling','betting','casino']
+};
+function domains(text){return Object.entries(domainGroups).filter(([k,words])=>words.some(w=>text.includes(w))).map(([k])=>k)}
+const creatorDomains=domains(creatorContext),campaignDomains=domains(campaignContext);
+const sharedDomain=campaignDomains.some(x=>creatorDomains.includes(x));
+let niche=excluded?10:(preferred||sharedDomain?85:25);
+let audience=missing(d.audience)?40:(sharedDomain?82:campaignDomains.length&&creatorDomains.length?25:45);
+
+let commercial=60;
+if(!d.compensation)commercial=20;
+else if(profile.minimum&&d.compensation<profile.minimum)commercial=35;
+else if(profile.minimum&&d.compensation>=profile.minimum*1.3)commercial=85;
+const workload=terms(d.deliverables,['4 video','5 ','6 ','10 ','multiple']);
+if(workload)commercial-=15;
+
+let feasibility=70;
+if(missing(d.timeline)||missing(d.deliverables))feasibility-=25;
+if(terms(d.deliverables,['technical','enterprise'])&&niche<40)feasibility-=25;
+
+const valuesConcern=terms(d.pitch+' '+d.notes,['transformation','guaranteed','miracle','unrealistic body','misleading claim','claim requirements are ambiguous']);
+let values=valuesConcern?35:70;
+if(excluded)values=0;
+
+let completeness=Math.max(10,100-miss.length*13);
+if(contradiction)completeness-=30;
+const score=Math.max(0,Math.min(100,Math.round(niche*.25+audience*.20+commercial*.20+feasibility*.15+values*.10+completeness*.10)));
+
+const risks=[];
+if(excluded)risks.push(['High','Creator-defined excluded category triggered']);
+if(explicitConflict)risks.push(['High','Explicit creator note indicates a possible existing-partnership conflict']);
+if(profile.minimum&&d.compensation&&d.compensation<profile.minimum)risks.push(['Medium','Compensation is below the creator-defined minimum']);
+if(terms(d.usage,['perpetual','worldwide','paid media','paid-media']))risks.push(['Medium','Broad paid-media or usage rights']);
+if(unclearExclusivity)risks.push(['Medium','Exclusivity is missing or unclear']);
+if(missing(d.payment))risks.push(['Low','Payment terms are not provided']);
+if(workload)risks.push(['Medium','Deliverable burden may be high']);
+if(contradiction)risks.push(['High','Material terms appear contradictory']);
+if(d.compensation>=100000&&miss.length>=3)risks.push(['Medium','Unusually attractive but materially incomplete offer']);
+if(valuesConcern)risks.push(['Medium','Campaign messaging may conflict with creator-defined values']);
+if(niche<=30)risks.push(['Medium','Weak creator-niche alignment']);
+if(audience<=30)risks.push(['Medium','Weak audience relevance']);
+
+// Confidence reflects evidence quality, not risk severity.
+let confidence='High';
+if(criticalMissing||contradiction||miss.length>=3)confidence='Low';
+else if(miss.length||unclearExclusivity||valuesConcern)confidence='Medium';
+
+let rec='Decline';
+if(excluded||explicitConflict)rec='Decline';
+else if(criticalMissing||contradiction||confidence==='Low')rec='Manual Review / Need More Information';
+else if(valuesConcern||unclearExclusivity)rec='Manual Review / Need More Information';
+else if(niche<=30||audience<=30)rec='Decline';
+else if(risks.some(r=>r[1].includes('Broad paid-media'))||commercial<55)rec='Negotiate';
+else if(score>=72)rec='Accept';
+else if(score>=55)rec='Negotiate';
+else rec='Decline';
+
+const reasons=[];
+reasons.push(niche>=70?'Strong apparent niche alignment':niche<40?'Weak creator-niche alignment':'Moderate creator-niche alignment');
+reasons.push(audience>=70?'Strong apparent audience relevance':audience<40?'Weak audience relevance':'Audience relevance requires creator review');
+if(d.compensation&&profile.minimum)reasons.push(d.compensation>=profile.minimum?'Compensation meets the creator-defined minimum':'Compensation is below the creator-defined minimum');
+if(miss.length)reasons.push(miss.length+' important field(s) require clarification');
+if(valuesConcern)reasons.push('Campaign messaging may conflict with creator-defined values');
+if(!risks.length)reasons.push('No material configured risk was triggered');
+
+let next='Decline or manually review the conflict before any further action.';
+if(rec==='Accept')next='Proceed subject to creator review of final terms.';
+else if(rec==='Negotiate')next='Negotiate the flagged commercial or contractual terms before accepting.';
+else if(rec==='Manual Review / Need More Information'){
+  if(!d.compensation)next='Request compensation and payment terms before evaluating commercial attractiveness.';
+  else if(unclearExclusivity)next='Clarify exclusivity scope and duration before deciding.';
+  else if(valuesConcern)next='Review the campaign claims and values alignment before deciding.';
+  else next='Request the missing information or conduct deeper manual review.';
+}
+currentResult={data:d,score,rec,confidence,reasons,risks,miss,next,dims:{'Creator / niche fit':niche,'Audience relevance':audience,'Commercial attractiveness':commercial,'Campaign feasibility':feasibility,'Values / preference alignment':values,'Risk / information completeness':completeness}};
+renderAnalysis();show('analysisPanel',3)
+}
+function safe(s){return String(s??'Not Provided').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function li(arr,empty='None identified'){return arr.length?'<ul>'+arr.map(x=>'<li>'+safe(x)+'</li>').join('')+'</ul>':'<p class="small">'+empty+'</p>'}
+function renderAnalysis(){const r=currentResult,d=r.data;const cls=r.rec==='Accept'?'accept':r.rec==='Negotiate'?'negotiate':r.rec==='Decline'?'decline':'review';const hard=r.risks.some(x=>x[0]==='High');const facts=[`Brand: ${d.brand}`,`Category: ${d.category||'Not Provided'}`,`Compensation: ${d.compensation?'INR '+d.compensation.toLocaleString('en-IN'):'Not Provided'}`,`Deliverables: ${d.deliverables||'Not Provided'}`,`Usage rights: ${d.usage||'Not Provided'}`];const inferences=r.reasons;const verify=['Brand reputation not verified','Market-rate comparison unavailable','Contract enforceability not assessed'];$('analysisContent').innerHTML=`<div class="card ${hard?'hard':''}"><div class="summary"><div class="metric"><div class="label">DealFit Score</div><div class="value">${r.score} / 100</div></div><div class="metric"><div class="label">Recommendation</div><div class="value"><span class="pill ${cls}">${safe(r.rec)}</span></div></div><div class="metric"><div class="label">Confidence</div><div class="value">${r.confidence}</div></div></div><p class="notice"><strong>Creator review required.</strong> The score is a structured screening indicator, not a probability of success.</p><div class="box"><h3>Recommended next action</h3><p>${safe(r.next)}</p></div></div>
+<div class="evidence"><div class="box"><h3>Provided Facts</h3>${li(facts)}</div><div class="box"><h3>AI Inferences</h3>${li(inferences)}</div><div class="box risk"><h3>Risk Flags</h3>${r.risks.length?r.risks.map(x=>`<div class="risk-row"><span class="sev ${x[0].toLowerCase()}">${x[0]}</span><span>${safe(x[1])}</span></div>`).join(''):'<p class="small">No configured risk triggered.</p>'}</div><div class="box missing"><h3>Missing Information</h3>${li(r.miss)}</div><div class="box full"><h3>External Verification Required</h3>${li(verify)}</div></div>
+<div class="card"><h2>Dimension details</h2><div class="bars">${Object.entries(r.dims).map(([k,v])=>`<div class="bar-row"><span>${safe(k)}</span><div class="bar"><div class="fill" style="width:${Math.max(0,v)}%"></div></div><strong>${Math.round(v)}</strong></div>`).join('')}</div><div class="disclaimer">Provided facts originate from user-entered information. AI inferences are prototype screening interpretations. DealFit does not provide legal, financial, contractual, or reputation-verification services.</div></div>`}
+function goDecision(){finalChoice='';document.querySelectorAll('.decision').forEach(b=>b.classList.remove('selected'));$('overrideArea').classList.add('hidden');$('confirmation').classList.add('hidden');$('decisionSummary').innerHTML=`DealFit recommended <strong>${safe(currentResult.rec)}</strong> with <strong>${currentResult.confidence}</strong> confidence and a score of <strong>${currentResult.score}</strong>.`;show('decisionPanel',4)}
+function choose(e){document.querySelectorAll('.decision').forEach(b=>b.classList.remove('selected'));e.target.classList.add('selected');finalChoice=e.target.textContent;const normalized=currentResult.rec.startsWith('Manual Review')?(finalChoice==='Manual Review'||finalChoice==='Need More Information'):finalChoice===currentResult.rec;$('overrideArea').classList.toggle('hidden',normalized)}
+function record(){if(!finalChoice){alert('Select a final creator decision.');return}const normalized=currentResult.rec.startsWith('Manual Review')?(finalChoice==='Manual Review'||finalChoice==='Need More Information'):finalChoice===currentResult.rec;history.unshift({brand:currentResult.data.brand,rec:currentResult.rec,confidence:currentResult.confidence,decision:finalChoice,override:normalized?'No':'Yes'});$('confirmation').classList.remove('hidden');$('confirmation').innerHTML=`<strong>Decision recorded.</strong><br>Final creator decision: ${safe(finalChoice)}<br>DealFit recommendation: ${safe(currentResult.rec)}<br>Override: ${normalized?'No':'Yes'}<br><br>DealFit has not contacted the brand or executed any external action.`;renderHistory()}
+function renderHistory(){const b=$('historyBody');b.innerHTML=history.map(x=>`<tr><td>${safe(x.brand)}</td><td>${safe(x.rec)}</td><td>${x.confidence}</td><td>${safe(x.decision)}</td><td>${x.override}</td></tr>`).join('')||'<tr><td colspan="5" class="small">No decisions recorded in this session.</td></tr>'}
+$('resetProfile').onclick=resetProfile;$('saveProfile').onclick=saveProfile;$('loadScenario').onclick=loadScenario;$('clearPitch').onclick=clearPitch;$('analyze').onclick=analyze;$('editDeal').onclick=()=>show('dealPanel',2);$('continueDecision').onclick=goDecision;$('backAnalysis').onclick=()=>show('analysisPanel',3);document.querySelectorAll('.decision').forEach(b=>b.onclick=choose);$('recordDecision').onclick=record;
+scenarios.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.id+' - '+s.name;$('scenario').appendChild(o)});resetProfile();loadScenario();
+</script>
+</body>
+</html>
