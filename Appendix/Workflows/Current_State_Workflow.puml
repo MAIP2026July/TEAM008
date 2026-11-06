@@ -1,0 +1,64 @@
+@startuml
+
+title DealFit - Current-State Sponsorship Screening Workflow (Before DealFit)
+
+skinparam backgroundColor white
+skinparam activity {
+  BackgroundColor #F7F9FC
+  BorderColor #4A5568
+  FontColor #1A202C
+  DiamondBackgroundColor #FFF4CC
+  DiamondBorderColor #B7791F
+}
+skinparam ArrowColor #4A5568
+
+|Brand / Platform|
+start
+:Send sponsorship pitch through\nEmail / DM / Creator Marketplace;
+
+|Creator|
+:Open and read the pitch;
+:Manually identify brand, compensation,\ndeliverables and campaign requirements;
+
+if (Basic information complete?) then (Yes)
+else (No)
+  :Request missing information\nfrom brand/contact;
+  |Brand / Platform|
+  :Provide clarification or\nadditional deal details;
+  |Creator|
+endif
+
+:Check category against personal\npreferences and exclusions;
+
+if (Hard conflict with creator rules?) then (Yes)
+  :Decline opportunity;
+  :Optionally record decision\nin notes/spreadsheet;
+  stop
+else (No)
+endif
+
+:Assess niche and likely\naudience relevance;
+:Compare compensation with\ndeliverables and personal benchmarks;
+:Review exclusivity, usage rights\nand campaign obligations;
+
+|External Information Sources|
+:Search brand information,\nreputation or prior context if needed;
+:Review previous deal records,\nnotes or informal benchmarks;
+
+|Creator|
+:Combine commercial, audience, brand\nand personal-context signals manually;
+
+if (Is the opportunity clearly suitable?) then (Yes)
+  :Accept or proceed to\ncommercial discussion;
+elseif (Potential value but terms need change?) then (Negotiate)
+  :Negotiate compensation, deliverables\nor contract terms;
+elseif (Clearly unsuitable?) then (Decline)
+  :Decline opportunity;
+else (Uncertain)
+  :Request more information or\nperform additional manual review;
+endif
+
+:Optionally record final decision\nand supporting notes;
+stop
+
+@enduml
